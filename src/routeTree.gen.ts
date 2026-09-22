@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutTheAuthorRouteImport } from './routes/about-the-author'
+import { Route as AboutTheBookRouteImport } from './routes/about-the-book'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutTheAuthorRoute = AboutTheAuthorRouteImport.update({
+  id: '/about-the-author',
+  path: '/about-the-author',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutTheBookRoute = AboutTheBookRouteImport.update({
+  id: '/about-the-book',
+  path: '/about-the-book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-the-author': typeof AboutTheAuthorRoute
+  '/about-the-book': typeof AboutTheBookRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-the-author': typeof AboutTheAuthorRoute
+  '/about-the-book': typeof AboutTheBookRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-the-author': typeof AboutTheAuthorRoute
+  '/about-the-book': typeof AboutTheBookRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/about-the-author' | '/about-the-book' | '/contact' | '/gallery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about-the-author' | '/about-the-book' | '/contact' | '/gallery'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-the-author'
+    | '/about-the-book'
+    | '/contact'
+    | '/gallery'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutTheAuthorRoute: typeof AboutTheAuthorRoute
+  AboutTheBookRoute: typeof AboutTheBookRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +95,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-the-author': {
+      id: '/about-the-author'
+      path: '/about-the-author'
+      fullPath: '/about-the-author'
+      preLoaderRoute: typeof AboutTheAuthorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-the-book': {
+      id: '/about-the-book'
+      path: '/about-the-book'
+      fullPath: '/about-the-book'
+      preLoaderRoute: typeof AboutTheBookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutTheAuthorRoute: AboutTheAuthorRoute,
+  AboutTheBookRoute: AboutTheBookRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
