@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, Images, Mail, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site-layout";
-import coverAsset from "@/assets/bethsabe-front-cover.jpg.asset.json";
+import coverAsset from "@/assets/sunset-detail.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
