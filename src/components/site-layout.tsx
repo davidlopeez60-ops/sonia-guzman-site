@@ -87,6 +87,6 @@ export function PageHero({ title, eyebrow, image }: { title: string; eyebrow?: s
   );
 }
 
-export function SectionHeading({ eyebrow, title, centered = false }: { eyebrow?: string; title: string; centered?: boolean }) {
-  return <div className={centered ? "mx-auto mb-12 max-w-3xl text-center" : "mb-10 max-w-3xl"}>{eyebrow && <p className="mb-3 font-sans text-base uppercase tracking-[0.2em] text-accent">{eyebrow}</p>}<h2 className="font-display text-4xl leading-tight text-primary-dark sm:text-5xl">{title}</h2><div className={`mt-6 h-px w-20 bg-primary ${centered ? "mx-auto" : ""}`} /></div>;
+export function SectionHeading({ eyebrow, title, centered = false, inverse = false }: { eyebrow?: string; title: string; centered?: boolean; inverse?: boolean }) {
+  return <div className={centered ? "mx-auto mb-12 max-w-3xl text-center" : "mb-10 max-w-3xl"}>{eyebrow && <p className={`mb-3 font-sans text-base uppercase tracking-[0.2em] ${inverse ? "text-primary" : "text-accent"}`}>{eyebrow}</p>}<h2 className={`font-display text-4xl leading-tight sm:text-5xl ${inverse ? "text-primary" : "text-primary-dark"}`}>{title}</h2><div className={`mt-6 h-px w-20 bg-primary ${centered ? "mx-auto" : ""}`} /></div>;
 }

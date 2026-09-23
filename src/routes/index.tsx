@@ -79,7 +79,7 @@ function Index() {
 
     <section className="relative overflow-hidden bg-secondary px-5 py-24 text-secondary-foreground sm:px-8 lg:py-32">
       <div className="reveal-section mx-auto max-w-7xl">
-        <SectionHeading eyebrow="At its heart" title="A novel about what endures" centered />
+        <SectionHeading eyebrow="At its heart" title="A novel about what endures" centered inverse />
         <div className="grid gap-px overflow-hidden border border-primary/35 bg-primary/35 md:grid-cols-3">
           {themes.map(({ icon: Icon, title, copy }, index) => <article key={title} className="group min-h-72 bg-secondary p-9 transition-colors duration-500 hover:bg-background md:p-10"><div className="flex items-center justify-between"><Icon className="size-7 text-primary" /><span className="font-display text-2xl italic text-primary/70">0{index + 1}</span></div><h3 className="mt-14 font-display text-3xl text-primary">{title}</h3><p className="mt-4 text-base leading-7 text-secondary-foreground/90">{copy}</p></article>)}
         </div>
@@ -90,7 +90,7 @@ function Index() {
       <div className="reveal-section mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:items-center lg:gap-20">
         <div className="relative lg:col-span-5">
           <div className="absolute -left-5 -top-5 h-full w-full border border-primary/60" aria-hidden="true" />
-          <img src={portraitAsset.url} alt="Sonia I. Guzman Rosario" loading="lazy" className="relative aspect-[4/5] w-full object-cover object-top editorial-shadow" />
+          <div className="relative aspect-[4/5] overflow-hidden editorial-shadow"><img src={portraitAsset.url} alt="Sonia I. Guzman Rosario" loading="lazy" className="h-full w-full scale-[1.22] object-cover object-[42%_20%]" /></div>
         </div>
         <div className="lg:col-span-7">
           <SectionHeading eyebrow="Meet the author" title="Sonia I. Guzman Rosario" />
@@ -103,7 +103,7 @@ function Index() {
 
     <section className="bg-background px-5 py-24 sm:px-8 lg:py-32">
       <div className="reveal-section mx-auto max-w-7xl">
-        <SectionHeading eyebrow="From the heart of the novel" title="Words to carry forward" centered />
+        <SectionHeading eyebrow="From the heart of the novel" title="Words to carry forward" centered inverse />
         <div className="grid gap-6 md:grid-cols-3">
           {quotes.map((quote) => <figure key={quote} className="quote-panel flex min-h-64 items-center border border-primary/35 bg-card p-8 text-center transition duration-500 hover:-translate-y-1 hover:border-primary editorial-shadow"><blockquote className="font-display text-2xl italic leading-relaxed text-primary">“{quote}”</blockquote></figure>)}
         </div>
