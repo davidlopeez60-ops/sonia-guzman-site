@@ -23,8 +23,8 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${scrolled || open ? "border-primary/25 bg-background/95 shadow-lg backdrop-blur-md" : "border-transparent bg-gradient-to-b from-background/90 to-transparent"}`}>
-      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:px-12">
+    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${scrolled || open ? "border-primary/25 bg-background/95 shadow-lg backdrop-blur-md" : "border-transparent bg-gradient-to-b from-background/90 to-transparent"}`}>
+      <div className={`mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 transition-all duration-500 sm:px-8 lg:px-12 ${scrolled ? "h-16" : "h-20"}`}>
         <Link to="/" className="flex min-w-0 items-center gap-3 text-primary" onClick={() => setOpen(false)}>
           <BookOpen className="size-6 shrink-0" aria-hidden="true" />
           <span className="truncate font-display text-lg uppercase tracking-[0.12em] sm:text-xl">Sonia I. Guzman Rosario</span>
