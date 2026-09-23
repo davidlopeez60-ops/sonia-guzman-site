@@ -72,7 +72,7 @@ function Index() {
             <div><dt className="font-sans text-accent">Publisher</dt><dd className="mt-1 font-display text-xl">Parker Publishers</dd></div>
             <div className="col-span-2 sm:col-span-1"><dt className="font-sans text-accent">Inspired by</dt><dd className="mt-1 font-display text-xl">Real events</dd></div>
           </dl>
-          <Button asChild size="lg" variant="ocean" className="mt-9"><Link to="/about-the-book">Read More <ArrowRight /></Link></Button>
+          <Button asChild size="lg" variant="amber" className="mt-9"><Link to="/about-the-book">Read More <ArrowRight /></Link></Button>
         </div>
       </div>
     </section>
@@ -96,7 +96,7 @@ function Index() {
           <SectionHeading eyebrow="Meet the author" title="Sonia I. Guzman Rosario" />
           <p className="max-w-2xl text-lg leading-8">Sonia I. Guzman Rosario writes with compassion for the people behind history’s defining moments. Her work explores family, faith, forgiveness, and the courage of young people finding their way through a changed world.</p>
           <blockquote className="mt-8 border-l border-primary pl-7 font-display text-2xl italic leading-relaxed text-accent">“A tribute to life, hope, and resilience—and a genuine call to humanity’s civic conscience.”</blockquote>
-          <Button asChild size="lg" variant="ocean" className="mt-9"><Link to="/about-the-author">About the Author <ArrowRight /></Link></Button>
+          <Button asChild size="lg" variant="amber" className="mt-9"><Link to="/about-the-author">About the Author <ArrowRight /></Link></Button>
         </div>
       </div>
     </section>
